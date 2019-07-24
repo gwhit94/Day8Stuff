@@ -22,6 +22,11 @@
         .red {
             background-color: red;
         }
+        #clock {
+            height: 250px;
+            width: 250px;
+            font-size: 250px;
+        }
     </style>
 </head>
 <body>
@@ -62,7 +67,7 @@
 
         clock();
         function clock(){
-            var timeLimit = prompt("Please enter a time limit.", "Time limit");
+            var timeLimit = prompt("Countdown in seconds.", "10");
             var clockDiv = document.getElementById("clock");
             clockDiv.innerText = timeLimit;
             var countdown = window.setInterval(function(){
@@ -73,11 +78,7 @@
                     clearInterval(countdown);
             }
             }, 1000)
-
         }
-
-
-
     </script>
 </body>
 </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        height: 200px;
+        width: 200px;
+        border: 2px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div class="class1 class3">Div 1</div>
+    <div class="class2">Div 2</div>
+    <div class="class2 class4">Div 3</div>
+    <div class="class1 class4">Div 4</div>
+    <div class="class1 class2">Div 5</div>
+    <div class="class5">Div 6</div>
+    <div class="class5">Div 7</div>
+    <div class="class1 class5" id="div8">Div 8</div>
+    <div class="class5 class4" id="div9">Div 9</div>
+    <div class="class1" id="div10">Div 10</div>
+
+    <script>
+    document.querySelectorAll(".class1").forEach(function(el){
+        el.style.borderColor = "orange";
+    });
+
+    document.querySelectorAll(".class3").forEach(function(el){
+        el.style.color = "red";
+    });
+
+    document.querySelectorAll(".class4").forEach(function(el){
+        el.style.color = "blue";
+    });
+
+    document.querySelectorAll(".class5").forEach(function(el){
+        el.classList.remove("class5")
+        el.classList.add("class6");
+    });
+
+    document.querySelectorAll("div").forEach(function(el){
+        el.classList.add("class7");
+    });
+
+    var div8 = document.getElementById("div8");
+    div8.remove();
+
+    var div9 = document.getElementById("div9");
+    document.getElementsByTagName("body")[0].prepend(div9);
+
+    document.querySelectorAll(".class2").forEach(function(el){
+        el.style.backgroundColor = "black";
+        el.style.color = "white";
+    });
+
+    var div10 = document.getElementById("div10");
+    div10.style.width = (div10.clientWidth * 0.42 +"px");
+    div10.style.height = (div10.clientHeight * 0.42+"px");
+    div10.id = "div10new";
+
+    </script>
+</body>
+</html>
+<!-- Take the following html and css snippets:
+
+<div class="class1 class3">Div 1</div>
+<div class="class2">Div 2</div>
+<div class="class2 class4">Div 3</div>
+<div class="class1 class4">Div 4</div>
+<div class="class1 class2">Div 5</div>
+<div class="class5">Div 6</div>
+<div class="class5">Div 7</div>
+<div class="class1 class5" id="div8">Div 8</div>
+<div class="class5 class4" id="div9">Div 9</div>
+<div class="class1" id="div10">Div 10</div>
+
+div{
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+}
+
+and make the following changes in order:
+Every div with .class1 should have an orange border X
+Every div with .class3 should have red text
+Every div with .class4 should have blue text
+Remove .class5 from all divs with .class5 and replace with .class6
+Add .class7 to ALL divs
+Remove the element with #div8
+Take the div with #div9 and move it to the top
+All divs with .class2 should have a black background with white text
+Take the div with #div10 and reduce the height and width to 42% of what it was (without hard-coding the number) and then change the id to div10New   -->
